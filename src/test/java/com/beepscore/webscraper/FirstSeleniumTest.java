@@ -30,8 +30,7 @@ public class FirstSeleniumTest {
     @Before
     public void setUp() throws Exception {
 
-        baseUrl = "https://github.com";
-        // baseUrl = "http://beepscore.com";
+        baseUrl = "http://beepscore.com";
         loadFirefoxDriver();
         // loadChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -53,14 +52,16 @@ public class FirstSeleniumTest {
 //    }
 
     @Test
-    public void testFirstSelenium() throws Exception {
-        driver.get(baseUrl + "/codesolid");
-        assertEquals("CodeSolid Software Development · GitHub", driver.findElement(By.cssSelector("html title")).getText());
+    public void testTitle() throws Exception {
+        driver.get(baseUrl + "/unit-testing");
+        assertEquals("Beepscore", driver.findElement(By.cssSelector("html title")).getText());
+    }
 
-        // driver.findElement(By.linkText("tutorials")).click();
-        // assertEquals("Welcome to the CodeSolid Tutorials", driver.findElement(By.cssSelector("html body.logged_out.env-production.windows.vis-public div.wrapper div.site div.container div.repository-with-sidebar.repo-container.new-discussion-timeline.js-new-discussion-timeline.with-full-navigation div#js-repo-pjax-container.repository-content.context-loader-container div#readme.clearfix.announce.instapaper_body.md article.markdown-body.entry-content h1")).getText());
-        // change logged_out to logged-out
-        // assertEquals("Welcome to the CodeSolid Tutorials", driver.findElement(By.cssSelector("html body.logged-out.vis-public div.wrapper div.site div.container div.repository-with-sidebar.repo-container.new-discussion-timeline.js-new-discussion-timeline.with-full-navigation div#js-repo-pjax-container.repository-content.context-loader-container div#readme.clearfix.announce.instapaper_body.md article.markdown-body.entry-content h1")).getText());
+    @Test
+    public void testBody() throws Exception {
+        driver.get(baseUrl + "/unit-testing");
+        String expected = "Jenkins iOS Unit Test Results";
+        assertEquals(expected, driver.findElement(By.cssSelector("html h3")).getText());
     }
 
     @After
