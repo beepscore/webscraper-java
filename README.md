@@ -12,6 +12,10 @@ https://github.com/CodeSolid/tutorials/tree/master/SeleniumStarterGradle
 
 [Using Gradle to Build Java Selenium Projects](http://www.codesolid.com/using-gradle-to-build-java-selenium-projects/).  Related tutorials include [Getting Started with Selenium in IntelliJ Idea, Part One](http://codesolid.com/getting-started-with-selenium-in-intellij-idea/) and [Part Two](http://codesolid.com/selenium-and-intellij-idea-part-two/).
 
+## websearcher
+Python project to search web, uses Selenium
+https://github.com/beepscore/websearcher/blob/master/websearcher/browser_driver.py
+
 # Results
 
 In SeleniumStarterGradle Update Selenium version from 2.41.0 to 3.5.3
