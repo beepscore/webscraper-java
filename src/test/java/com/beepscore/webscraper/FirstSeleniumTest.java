@@ -58,7 +58,7 @@ public class FirstSeleniumTest {
     }
 
     @Test
-    public void testBody() throws Exception {
+    public void testH3() throws Exception {
         driver.get(baseUrl + "/unit-testing");
         String expected = "Jenkins iOS Unit Test Results";
         assertEquals(expected, driver.findElement(By.cssSelector("html h3")).getText());
