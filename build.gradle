@@ -9,6 +9,17 @@ repositories {
     mavenCentral()
 }
 
+ext.seleniumVersion = '3.5.3'
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // I couldn't find selenium via Intellij generate maven
+    // Use settings similar to
+    // CodeSolid tutorials, SeleniumStarterGradle
+    // https://github.com/CodeSolid/tutorials/tree/master/SeleniumStarterGradle
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version:seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version:seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:seleniumVersion
 }
