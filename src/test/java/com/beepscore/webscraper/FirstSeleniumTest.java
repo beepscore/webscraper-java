@@ -61,14 +61,16 @@ public class FirstSeleniumTest {
     public void testH1() throws Exception {
         driver.get(baseUrl + "/unit-testing");
         String expected = "Unit Testing";
-        assertEquals(expected, driver.findElement(By.cssSelector("html h1")).getText());
+        // cssSelector argument can be as simple as "h1",
+        // but probably more specific cssSelector "html body h1" increases reliability
+        assertEquals(expected, driver.findElement(By.cssSelector("html body h1")).getText());
     }
 
     @Test
     public void testH3() throws Exception {
         driver.get(baseUrl + "/unit-testing");
         String expected = "Jenkins iOS Unit Test Results";
-        assertEquals(expected, driver.findElement(By.cssSelector("html h3")).getText());
+        assertEquals(expected, driver.findElement(By.cssSelector("html body h3")).getText());
     }
 
     @After
